@@ -14,6 +14,8 @@
 
 ### 💡 Others
 
+- Fix resolving issues with AudioEventKeys on webpack. Export mark types export with `type`. ([#37421](https://github.com/expo/expo/pull/37421) by [@behenate](https://github.com/behenate))
+
 ## 0.4.6 - 2025-06-04
 
 ### 🐛 Bug fixes
