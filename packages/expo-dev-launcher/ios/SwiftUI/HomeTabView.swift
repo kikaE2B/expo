@@ -41,7 +41,9 @@ struct HomeTabView: View {
         .padding()
       }
     }
+    #if !os(tvOS)
     .background(Color(.systemGroupedBackground))
+    #endif
     .overlay(
       DevServerInfoModal(showingInfoDialog: $showingInfoDialog)
     )

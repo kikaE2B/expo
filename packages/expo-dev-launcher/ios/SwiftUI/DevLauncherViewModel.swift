@@ -39,7 +39,9 @@ class DevLauncherViewModel: ObservableObject {
   @Published var userInfo: [String: Any]?
   @Published var isAuthenticating = false
 
+  #if !os(tvOS)
   private let presentationContext = DevLauncherAuthPresentationContext()
+  #endif
 
   init() {
     loadData()
@@ -265,6 +267,9 @@ class DevLauncherViewModel: ObservableObject {
   }
 
   private func performAuthentication(isSignUp: Bool) async throws -> Bool {
+    #if os(tvOS)
+    throw Exception(name: "NotImplementedError", description: "Not implemented on tvOS")
+    #else
     return try await withCheckedThrowingContinuation { continuation in
       let websiteOrigin = "https://staging.expo.dev"
       let authType = isSignUp ? "signup" : "login"
@@ -303,6 +308,7 @@ class DevLauncherViewModel: ObservableObject {
       session.prefersEphemeralWebBrowserSession = true
       session.start()
     }
+    #endif
   }
 
   private func getURLScheme() -> String {
@@ -316,9 +322,11 @@ class DevLauncherViewModel: ObservableObject {
   }
 }
 
+#if !os(tvOS)
 private class DevLauncherAuthPresentationContext: NSObject, ASWebAuthenticationPresentationContextProviding {
   func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
     let window = UIApplication.shared.windows.first { $0.isKeyWindow }
     return window ?? ASPresentationAnchor()
   }
 }
+#endif

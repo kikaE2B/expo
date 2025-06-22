@@ -17,7 +17,9 @@ struct DevMenuRootView: View {
           DevMenuMainView()
             .environmentObject(viewModel)
         }
+        #if !os(tvOS)
         .background(Color(.systemGroupedBackground))
+        #endif
       }
 
       if !viewModel.isOnboardingFinished {

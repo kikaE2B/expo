@@ -32,7 +32,9 @@ struct ExtensionsTabView: View {
         .cornerRadius(5)
       }
     }
+    #if !os(tvOS)
     .background(Color(.systemGroupedBackground))
+    #endif
   }
 
   private var description: some View {
