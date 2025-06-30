@@ -1,0 +1,1 @@
+{"version":3,"file":"ModalView.js","sourceRoot":"","sources":["../../src/modal/ModalView.tsx"],"names":[],"mappings":";;;AAAA,+DAAoE;AAE3D,0FAFmB,sCAAS,OAEnB","sourcesContent":["import { ScreenStackItem as ModalView } from 'react-native-screens';\n\nexport { ModalView };\n"]}
