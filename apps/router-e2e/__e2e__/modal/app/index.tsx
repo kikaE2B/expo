@@ -1,4 +1,4 @@
-import { Link, Modal, Stack } from 'expo-router';
+import { Link, Modal, Redirect, Stack } from 'expo-router';
 import { useState } from 'react';
 import { Button, Text, View } from 'react-native';
 
@@ -65,7 +65,7 @@ export default function Index() {
       />
     </View>
   );
-
+  return <Redirect href="/modal" />;
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Index</Text>

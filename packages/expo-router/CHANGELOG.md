@@ -14,6 +14,8 @@
 
 ### 🐛 Bug fixes
 
+- Fix children updates and nested modals ([#37763](https://github.com/expo/expo/pull/37763) by [@Ubax](https://github.com/Ubax))
+
 ### 💡 Others
 
 - Create href preview component ([#37335](https://github.com/expo/expo/pull/37335) by [@Ubax](https://github.com/Ubax))
